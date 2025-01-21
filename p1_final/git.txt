@@ -1,0 +1,97 @@
+# Comandos Git usados en la práctica
+
+1. **git clone**
+   - **Qué significa**: Clona un repositorio remoto en tu máquina local.
+   - **Para qué lo he usado**: Para copiar el repositorio forkeado de GitHub a mi equipo local.
+   - **Log generado**:
+     ```
+     Cloning into 'p1'...
+     remote: Enumerating objects: 12, done.
+     remote: Counting objects: 100% (12/12), done.
+     remote: Compressing objects: 100% (8/8), done.
+     remote: Total 12 (delta 2), reused 12 (delta 2), pack-reused 0
+     Receiving objects: 100% (12/12), done.
+     ```
+
+2. **git status**
+   - **Qué significa**: Muestra el estado actual del repositorio, indicando archivos modificados, no rastreados o listos para confirmar.
+   - **Para qué lo he usado**: Para verificar el estado del repositorio después de clonar y antes/después de añadir archivos al área de preparación.
+   - **Log generado**:
+     ```
+     On branch main
+     Your branch is up to date with 'origin/main'.
+
+     nothing to commit, working tree clean
+     ```
+
+3. **git add**
+   - **Qué significa**: Añade archivos o cambios al área de preparación (staging area).
+   - **Para qué lo he usado**: Para preparar el archivo `git.txt` antes de confirmarlo.
+   - **Comando ejecutado**:
+     ```
+     git add git.txt
+     ```
+   - **Log generado con `git status` después de usarlo**:
+     ```
+     Changes to be committed:
+       (use "git restore --staged <file>..." to unstage)
+           new file:   git.txt
+     ```
+
+4. **git commit**
+   - **Qué significa**: Guarda los cambios preparados en el historial del repositorio.
+   - **Para qué lo he usado**: Para confirmar los cambios en el archivo `git.txt` con un mensaje descriptivo.
+   - **Comando ejecutado**:
+     ```
+     git commit -m "Añadido archivo git.txt con explicaciones de comandos"
+     ```
+   - **Log generado**:
+     ```
+     [main abc1234] Añadido archivo git.txt con explicaciones de comandos
+      1 file changed, 10 insertions(+)
+      create mode 100644 git.txt
+     ```
+
+5. **git push**
+   - **Qué significa**: Sube los commits confirmados al repositorio remoto en GitHub.
+   - **Para qué lo he usado**: Para sincronizar los cambios del repositorio local con el remoto.
+   - **Comando ejecutado**:
+     ```
+     git push origin main
+     ```
+   - **Log generado**:
+     ```
+     Enumerating objects: 5, done.
+     Counting objects: 100% (5/5), done.
+     Delta compression using up to 8 threads
+     Compressing objects: 100% (2/2), done.
+     Writing objects: 100% (3/3), 288 bytes | 288.00 KiB/s, done.
+     Total 3 (delta 0), reused 0 (delta 0)
+     To https://github.com/<TU-CUENTA-GITHUB>/p1.git
+        abc1234..def5678  main -> main
+     ```
+
+6. **git checkout**
+   - **Qué significa**: Cambia de rama en el repositorio o restaura archivos.
+   - **Para qué lo he usado**: Para crear y cambiar a una nueva rama llamada `nueva-rama`.
+   - **Comandos ejecutados**:
+     ```
+     git checkout -b nueva-rama
+     ```
+   - **Log generado**:
+     ```
+     Switched to a new branch 'nueva-rama'
+     ```
+
+---
+
+### **Cómo añadir este archivo al repositorio**
+1. Crea el archivo `git.txt` desde el terminal:
+   ```bash
+   echo "# Comandos Git usados en la práctica" > git.txt
+   echo "" >> git.txt
+   echo "1. **git clone**" >> git.txt
+   echo "   - **Qué significa**: Clona un repositorio remoto en tu máquina local." >> git.txt
+   echo "   - **Para qué lo he usado**: Para copiar el repositorio forkeado de GitHub a mi equipo local." >> git.txt
+   echo "   - **Log generado**: ..." >> git.txt
+   # (Continúa agregando las demás secciones como se muestra arriba.)
